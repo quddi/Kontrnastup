@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: ff6c041565123e3449aed80434405469
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Galiver Sans
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7d8829eba9fddb34ea57f5d482abec53, type: 3}
+  - {fileID: 12800000, guid: 1268f5ca539e41744b5f931a915ec62a, type: 3}
+  - {fileID: 12800000, guid: 7bec030434c248745813547a3c11dcf6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
