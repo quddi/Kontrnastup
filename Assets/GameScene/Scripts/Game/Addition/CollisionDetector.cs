@@ -1,7 +1,4 @@
 using UnityEngine;
-using System;
-using System.Reflection;
-
 
 public class CollisionDetector : MonoBehaviour
 {

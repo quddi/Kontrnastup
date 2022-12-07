@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class RandomBarriersSelector : MonoBehaviour
 {
+    [SerializeField] private CharacterDetector _characterDetector;
     [SerializeField] private List<GameObject> _barriers;
     [SerializeField] private int _barriersToSpawnCount;
 
@@ -15,7 +16,7 @@ public class RandomBarriersSelector : MonoBehaviour
             EnableRandomBarrier();
     }
 
-    private void DiactivateAll()
+    public void DiactivateAll()
     {
         DisableAllBarriers();
     }
@@ -31,10 +32,21 @@ public class RandomBarriersSelector : MonoBehaviour
         int randomIndex;
 
         do
+        {
             randomIndex = Random.Range(0, _barriers.Count);
-        while 
-            (_barriers[randomIndex].activeSelf == true);
+        }
+        while (_barriers[randomIndex].activeSelf == true);
 
         _barriers[randomIndex].SetActive(true);
+    }
+
+    private void OnEnable()
+    {
+        _characterDetector.PlayerEnteredEvent += Activate;
+    }
+
+    private void OnDisable()
+    {
+        _characterDetector.PlayerEnteredEvent -= Activate;
     }
 }

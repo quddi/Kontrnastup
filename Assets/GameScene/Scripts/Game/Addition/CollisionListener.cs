@@ -9,7 +9,7 @@ public class CollisionListener : MonoBehaviour
     public event Action CoinCollisionEvent;
     public event Action BonusCollisionEvent;
 
-    private void Start()
+    private void Awake()
     {
         if (Instance == null)
             Instance = this;

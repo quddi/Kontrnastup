@@ -9,6 +9,9 @@ public class CharacterPresenter : MonoBehaviour
     [SerializeField] private GameObject _jumpAnimation;
     [SerializeField] private GameObject _rollAnimation;
 
+    [SerializeField] private GameObject _normalCollider;
+    [SerializeField] private GameObject _rollCollider;
+
     private Character _character;
     private CharacterMovement _movement;
 
@@ -40,13 +43,27 @@ public class CharacterPresenter : MonoBehaviour
     {
         _runAnimation.SetActive(false);
         _rollAnimation.SetActive(true);
+        SetRollCollider();
 
         _movement.Roll(() => 
         {
             _rollAnimation.SetActive(false);
             _runAnimation.SetActive(true);
+            SetNormalCollider();
             modelCallback();
         });
+    }
+
+    private void SetRollCollider()
+    {
+        _rollCollider.SetActive(true);
+        _normalCollider.SetActive(false);
+    }
+
+    private void SetNormalCollider()
+    {
+        _rollCollider.SetActive(false);
+        _normalCollider.SetActive(true);
     }
 
     private void OnEnable()

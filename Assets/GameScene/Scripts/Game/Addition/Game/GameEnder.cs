@@ -3,9 +3,19 @@ using System;
 
 public class GameEnder : MonoBehaviour
 {
-    [SerializeField] private CollisionListener _playerCollisionDetector;
+    [SerializeField] private CollisionListener _collisionListener;
+
+    static public GameEnder Instance { get; private set; }
 
     public event Action GameEndEvent;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Start()
     {
@@ -20,11 +30,11 @@ public class GameEnder : MonoBehaviour
 
     private void OnEnable()
     {
-        _playerCollisionDetector.BarrierCollisionEvent += OnPlayerCollidedBarrier;
+        _collisionListener.BarrierCollisionEvent += OnPlayerCollidedBarrier;
     }
 
     private void OnDisable()
     {
-        _playerCollisionDetector.BarrierCollisionEvent -= OnPlayerCollidedBarrier;
+        _collisionListener.BarrierCollisionEvent -= OnPlayerCollidedBarrier;
     }
 }

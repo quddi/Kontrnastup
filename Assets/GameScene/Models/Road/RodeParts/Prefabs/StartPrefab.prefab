@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc4532176de3ced43be65650a1df3a1d, type: 2}
+  - {fileID: 2100000, guid: 39c7540b39301744e9b24f5891ab04fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -190,7 +190,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc4532176de3ced43be65650a1df3a1d, type: 2}
+  - {fileID: 2100000, guid: 8c2f9bc0080d972478c568744f1f0f69, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -401,7 +401,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc4532176de3ced43be65650a1df3a1d, type: 2}
+  - {fileID: 2100000, guid: 8c2f9bc0080d972478c568744f1f0f69, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -498,7 +498,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc4532176de3ced43be65650a1df3a1d, type: 2}
+  - {fileID: 2100000, guid: 39c7540b39301744e9b24f5891ab04fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -626,7 +626,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc4532176de3ced43be65650a1df3a1d, type: 2}
+  - {fileID: 2100000, guid: 39c7540b39301744e9b24f5891ab04fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -806,7 +806,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc4532176de3ced43be65650a1df3a1d, type: 2}
+  - {fileID: 2100000, guid: 8c2f9bc0080d972478c568744f1f0f69, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -901,6 +901,7 @@ MonoBehaviour:
   _endDownRightCorner: {fileID: 8739538897907213439}
   _startDownRightCorner: {fileID: 9036966394043248184}
   _origin: {fileID: 8933336687955732709}
+  _coins: []
 --- !u!114 &-3318590052307889675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -914,8 +915,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _velocity: 0.05
-  _borderX: -5
-  _gameEndPresenter: {fileID: 0}
 --- !u!65 &4835310564674874195
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -927,8 +926,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.0025024, y: 0.24426794, z: 6.024596}
-  m_Center: {x: 1.991456, y: -0.0102126, z: 0}
+  m_Size: {x: 7.9965887, y: 2.0931458, z: 6.024596}
+  m_Center: {x: 3.9884992, y: -0.9346516, z: 0}
 --- !u!54 &6214757688042440877
 Rigidbody:
   m_ObjectHideFlags: 0

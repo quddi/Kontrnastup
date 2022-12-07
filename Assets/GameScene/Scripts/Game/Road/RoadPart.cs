@@ -14,8 +14,6 @@ public class RoadPart : MonoBehaviour
 
     private RoadMovement _movement;
 
-    public event Action BorderCrossedEvent;
-
     public RoadSO Type => _scriptableObject;
 
     public RoadSO[] CompatiblePartTypes => _scriptableObject.CompatibleParts;
@@ -28,11 +26,6 @@ public class RoadPart : MonoBehaviour
     private void Awake()
     {
         _movement = GetComponent<RoadMovement>();
-    }
-
-    private void OnCrossedBorder()
-    {
-        BorderCrossedEvent?.Invoke();
     }
 
     public void Spawn(Vector3 position)
@@ -51,15 +44,5 @@ public class RoadPart : MonoBehaviour
     {
         foreach (var coin in _coins)
             coin.SetActive(true);
-    }
-
-    private void OnEnable()
-    {
-        _movement.BorderCrossedEvent += OnCrossedBorder;
-    }
-
-    private void OnDisable()
-    {
-        _movement.BorderCrossedEvent -= OnCrossedBorder;
     }
 }

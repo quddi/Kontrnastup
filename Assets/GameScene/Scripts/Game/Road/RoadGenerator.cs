@@ -28,7 +28,14 @@ public class RoadGenerator : MonoBehaviour
     }
 
     private void OnPartCrossedBorder()
-    {
+    { 
+        //Debug.Log("OnPartCrossedBorder " + Time.time); //------------------------
+        //{
+        //    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        //    foreach (var part in _activeRoadParts)
+        //        sb.AppendLine(part.ToString() + " ");
+        //    Debug.Log(sb.ToString());
+        //}
         GenerateNext();
         RemoveHeadPart();
     }
@@ -44,6 +51,7 @@ public class RoadGenerator : MonoBehaviour
 
     public void GenerateNext()
     {
+        //Debug.Log("generate start " + Time.time); //------------------------
         RoadSO chosenPartType = GetRandomCompatiblePart(_tailPart);
 
         RoadPart chosenPart = _inactiveRoadParts.FirstOrDefault(part => part.Type == chosenPartType);
@@ -60,7 +68,11 @@ public class RoadGenerator : MonoBehaviour
             }
         }
 
+       //if (chosenPart == null)
+            //Debug.Log("chosen part was null!"); //-------------------------
+
         AddTailPart(chosenPart);
+        //Debug.Log("generate end " + Time.time + " chosenPart:" + chosenPart.name); //------------------------
     }
 
     private void AddTailPart(RoadPart roadPart)
@@ -74,11 +86,17 @@ public class RoadGenerator : MonoBehaviour
 
     public void RemoveHeadPart()
     {
+        //Debug.Log("remove head start " + Time.time); //------------------------
+
         RoadPart roadPart = _activeRoadParts.Dequeue();
+
+        //Debug.Log("part to remove: " + roadPart.name); // --------------------
         
         _inactiveRoadParts.Add(roadPart);
 
         HeadRemovedEvent?.Invoke(roadPart);
+
+        //Debug.Log("remove head end " + Time.time); //------------------------
     }
 
     private RoadSO GetRandomCompatiblePart(RoadPart roadPart)

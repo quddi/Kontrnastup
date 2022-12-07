@@ -34,9 +34,16 @@ public class CharacterMovement : MonoBehaviour
     {
         Sequence jumpSequence = DOTween.Sequence();
         jumpSequence.Append(transform.DOMoveY(_jumpHeight, _jumpDuration).SetEase(_jumpCurve));
+
         jumpSequence.Append(transform.DOMoveY(_landingEnd, _landingDuration)
             .SetEase(_landingCurve)
             .OnComplete(() => callback.Invoke()));
+    }
+
+    private IEnumerator WaitLanding(Action action)
+    {
+        yield return new WaitForSeconds(_landingDuration);
+        action.Invoke();
     }
 
     public void Roll(Action callback)

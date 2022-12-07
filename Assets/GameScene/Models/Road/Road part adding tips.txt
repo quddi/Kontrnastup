@@ -1,0 +1,6 @@
+1. Make a copy of any road prefab
+2. Create a scriptable object for it
+3. Add at least 3 compatible parts
+4. Edit new prefab, rename it
+5. Don't forget to remove ALL terrain colliders and to expand the main collider down
+6. Add all coins to the list
